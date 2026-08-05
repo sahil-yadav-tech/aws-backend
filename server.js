@@ -5,7 +5,7 @@ const port = process.env.PORT || 2721;
 
 app.get("/", async (req, res) => {
   return res.status(200).json({
-    message: "Hey there",
+    message: "Hey theres",
   });
 });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
