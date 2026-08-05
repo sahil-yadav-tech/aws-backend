@@ -21,11 +21,11 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t sahilyadavteche/aws-backend:latest .
+          docker build -t sahildocker9082/aws-backend:latest .
 
       - name: Push Docker Image
         run: |
-          docker push sahilyadavteche/aws-backend:latest
+          docker push sahildocker9082/aws-backend:latest
 
       - name: Deploy To EC2
         uses: appleboy/ssh-action@v1.2.0
@@ -34,7 +34,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull sahilyadavteche/aws-backend:latest
+            docker pull sahildocker9082/aws-backend:latest
 
             docker stop aws-backend || true
             docker rm aws-backend || true
@@ -43,4 +43,4 @@ jobs:
               --name aws-backend \
               -p 2720:2720 \
               --restart unless-stopped \
-              sahilyadavteche/aws-backend:latest
+              sahildocker9082/aws-backend:latest
