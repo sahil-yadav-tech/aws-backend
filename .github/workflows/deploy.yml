@@ -34,13 +34,14 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull sahildocker9082/aws-backend:latest
+            sudo docker pull sahildocker9082/aws-backend:latest
 
-            docker stop aws-backend || true
-            docker rm aws-backend || true
+            sudo docker stop aws-backend || true
+            sudo docker rm aws-backend || true
 
-            docker run -d \
+            sudo docker run -d \
               --name aws-backend \
               -p 2720:2720 \
               --restart unless-stopped \
               sahildocker9082/aws-backend:latest
+         
