@@ -1,7 +1,7 @@
 console.log("JAI SHREE RAM JI / JAI BAJARANG BALI JI 😍❤️");
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 2721;
+const port = 2720;
 
 app.get("/", async (req, res) => {
   return res.status(200).json({
