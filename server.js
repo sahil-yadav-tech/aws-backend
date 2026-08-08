@@ -5,7 +5,7 @@ const port = 2720;
 
 app.get("/", async (req, res) => {
   return res.status(200).json({
-    message: "Hey there c",
+    message: "Hey there ",
   });
 });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
